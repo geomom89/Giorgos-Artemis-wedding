@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πρόσκληση Γάμου</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f8f8f8;
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .invitation {
+            background-color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 60px 30px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .gypsophila {
+            background: url('https://example.com/gypsophila.png') no-repeat center top;
+            background-size: contain;
+            height: 180px;
+            width: 100%;
+            position: absolute;
+            top: -30px;
+            left: 0;
+            right: 0;
+        }
+
+        .invitation-content {
+            padding-top: 200px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 10px 0;
+            color: #2e2e2e;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin: 15px 0;
+            color: #5a5a5a;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 8px 0;
+            color: #444;
+        }
+
+        .footer {
+            font-style: italic;
+            margin-top: 30px;
+            color: #666;
+        }
+
+        .decorative-line {
+            width: 60px;
+            height: 2px;
+            background-color: #ccc;
+            margin: 20px auto;
+        }
+
+        .rsvp {
+            margin-top: 20px;
+        }
+
+        .rsvp button {
+            background-color: #5a5a5a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .rsvp button:hover {
+            background-color: #333;
+        }
+
+        .map-link {
+            margin: 10px 0;
+        }
+
+        .map-link a {
+            color: #2e2e2e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .map-link a:hover {
+            text-decoration: underline;
+        }
+
+        .rsvp-form {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .rsvp-form input, .rsvp-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .rsvp-form button {
+            background-color: #5a5a5a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .rsvp-form button:hover {
+            background-color: #333;
+        }
+    </style>
+    <script>
+        function toggleRSVP() {
+            var form = document.getElementById('rsvpForm');
+            form.style.display = form.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="invitation">
+        <div class="gypsophila"></div>
+        <div class="invitation-content">
+            <h1>Γιώργος & Άρτεμις</h1>
+            <div class="decorative-line"></div>
+            <p>Με μεγάλη χαρά σας προσκαλούμε στον γάμο μας</p>
+            <p>Μαζί με τις οικογένειές μας:<br>
+                Μιχαήλ Μωμός & Φρειδερίκη Σκούρα<br>
+                Γεώργιος Ριζάκης & Ευφημία Καρντζατζόγλου
+            </p>
+            <h2>10 Μαΐου 2025, 20:00</h2>
+            <p>Ιερός Ναός Παναγίας Φανερωμένης, Βουλιαγμένη</p>
+            <div class="map-link">
+                <a href="https://maps.app.goo.gl/nLeG1a9Y2C1kcZrx9" target="_blank">Δείτε την τοποθεσία στον χάρτη</a>
+            </div>
+            <p>Δεξίωση στο Κτήμα Ζολώτα, Κορωπί</p>
+            <div class="map-link">
+                <a href="https://maps.app.goo.gl/JCKeVsYgJq8Jjb739" target="_blank">Δείτε την τοποθεσία στον χάρτη</a>
+            </div>
+            <p class="footer">Κουμπάροι: Ιωάννα Ευγενία Μπακούνη, Φίλιππος Τριανταφυλλίδης, Γεώργιος Μαρούτσος</p>
+
+            <div class="rsvp">
+                <button onclick="toggleRSVP()">Επιβεβαιώστε την παρουσία σας (RSVP)</button>
+            </div>
+
+            <div class="rsvp-form" id="rsvpForm">
+                <form>
+                    <input type="text" name="name" placeholder="Ονοματεπώνυμο" required>
+                    <input type="number" name="guests" placeholder="Αριθμός Ατόμων" required>
+                    <input type="number" name="children" placeholder="Αριθμός Παιδιών">
+                    <input type="text" name="children_ages" placeholder="Ηλικίες Παιδιών">
+                    <textarea name="message" placeholder="Σχόλια ή Παρατηρήσεις"></textarea>
+                    <button type="submit">Αποστολή</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
